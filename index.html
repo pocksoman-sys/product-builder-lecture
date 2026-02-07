@@ -3,19 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lotto Number Generator</title>
+    <title>Restaurant Finder</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Lotto Number Generator</h1>
-        <div id="lotto-numbers" class="lotto-numbers">
-            <!-- Lotto numbers will be displayed here -->
-        </div>
-        <button id="generate-btn">Generate Numbers</button>
-        <button id="theme-toggle">Toggle Dark/Light Mode</button>
+        <h1>Restaurant Finder</h1>
+        <p>Tired of deciding where to eat for lunch? Let us help you!</p>
+
+        <section id="location-input-section">
+            <h2>Your Company Location</h2>
+            <input type="text" id="company-location" placeholder="Enter your company address (e.g., 1600 Amphitheatre Parkway, Mountain View, CA)">
+            <button id="search-btn">Find Restaurants Near Me (1km Radius)</button>
+        </section>
+
+        <section id="map-section">
+            <div id="map" style="height: 400px; width: 100%;"></div>
+        </section>
+
+        <section id="search-results-section">
+            <h2>Restaurants Near You</h2>
+            <div id="search-results">
+                <!-- Search results will be displayed here -->
+                <p class="placeholder">Enter your location and click "Find Restaurants" to see results.</p>
+            </div>
+            <button id="random-search-result-btn" style="display: none;">Recommend Random from Search Results</button>
+        </section>
+
+        <section id="favorites-section">
+            <h2>Your Favorite Restaurants</h2>
+            <div id="favorites-list">
+                <!-- Favorite restaurants will be displayed here -->
+                <p class="placeholder">Save restaurants from the search results to see them here.</p>
+            </div>
+            <button id="random-favorite-btn">Recommend Random from Favorites</button>
+            <p id="no-favorites-message" style="display: none; color: gray;">Add some favorites first!</p>
+        </section>
     </div>
 
     <script src="script.js"></script>
+    <!-- Google Maps API Script - Replace YOUR_API_KEY with your actual Google Maps API key -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places&callback=initMap"></script>
 </body>
 </html>
